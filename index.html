@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Proyecto T.I.A.</title>
+
+  <style>
+    html,
+    body,
+    #game-container {
+      margin: 0;
+      padding: 0;
+    }
+
+    #game-container {
+      min-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #game-container>canvas {
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-container"></div>
+  <script type="text/javascript" src="http://zebkit.org/ver/latest/zebkit.min.js"></script>
+  <script src="./lib/dungeon@1.2.1.js"></script>
+  <script src="./lib/phaser.js"></script>
+  <script src="./js/main-menu.js"></script>
+  <script src="./js/map-editor.js"></script>
+  <script src="./js/player.js"></script>
+  <script src="./js/dungeon-scene.js"></script>
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>
