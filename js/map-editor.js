@@ -1,4 +1,4 @@
-class MapEditor extends Phaser.Scene {
+export default class MapEditor extends Phaser.Scene {
     constructor(){
         super({key: "MapEditor"});
     }

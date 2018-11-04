@@ -1,9 +1,4 @@
-/**
- * A class that wraps up our top down player logic. It creates, animates and moves a sprite in
- * response to WASD keys. Call its update method from the scene's update and call its destroy
- * method when you're done with the player.
- */
-class Player {
+export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
 
@@ -63,7 +58,7 @@ class Player {
     // Normalize and scale the velocity so that sprite can't move faster along a diagonal
     sprite.body.velocity.normalize().scale(speed);
 
-    // Update the animation last and give left/right/down animations precedence over up animations
+    // Update the animation last and give left/right animations precedence over up/down animations
     if (keys.left.isDown || keys.right.isDown || keys.down.isDown) {
       sprite.anims.play("player-walk", true);
     } else if (keys.up.isDown) {
@@ -71,7 +66,7 @@ class Player {
     } else {
       sprite.anims.stop();
 
-      // If we were moving & now we're not, then pick a single idle frame to use
+      // If we were moving, pick and idle frame to use
       if (prevVelocity.y < 0) sprite.setTexture("characters", 65);
       else sprite.setTexture("characters", 46);
     }
